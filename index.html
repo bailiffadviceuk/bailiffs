@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop the Bailiff - Free Debt Advice & Help</title>
+    <meta name="description" content="Free expert advice on dealing with bailiffs. Help with council tax debt, bailiff visits, and enforcement agents. Get help today.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Flash animation for the Get Free Advice button */
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+        
+        .flash-btn {
+            animation: flash 1.5s infinite;
+            background-color: #e67e22 !important;
+            border: 2px solid white !important;
+            font-weight: bold !important;
+            padding: 10px 20px !important;
+            border-radius: 50px !important;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.5);
+        }
+        
+        .flash-btn:hover {
+            animation: none;
+            background-color: #d35400 !important;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        
+        /* Highlight the form when scrolled to */
+        .form-container.highlight {
+            box-shadow: 0 0 0 4px #e67e22, 0 10px 30px rgba(0,0,0,0.2);
+            transition: box-shadow 0.5s ease;
+        }
+        
+        /* Sticky header adjustment */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-gavel"></i>
+                <h1>Stop the <span>Bailiff</span></h1>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="help-with-bailiffs.html">Help with Bailiffs</a></li>
+                    <li><a href="help-with-council-tax.html">Council Tax Help</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="getAdviceBtn" class="btn flash-btn">Get Free Advice <i class="fas fa-arrow-right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Free Expert Advice to Stop Bailiffs</h2>
+            <p>Get immediate help with bailiff visits, council tax debt, and enforcement agents. Our experienced team can help you find the best solution for your situation.</p>
+            <a href="#" id="heroAdviceBtn" class="btn" style="background-color: white; color: #2c3e50; margin-top: 20px; font-weight: bold;">Get Free Advice Now <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Stop Bailiff Action</h3>
+                <p>Learn how to stop bailiff visits and protect your belongings. Get expert advice on your rights and options.</p>
+                <a href="help-with-bailiffs.html" class="btn">Learn More</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-home"></i>
+                <h3>Council Tax Help</h3>
+                <p>Struggling with council tax debt? Find out how we can help you arrange affordable payments and stop bailiff action.</p>
+                <a href="help-with-council-tax.html" class="btn">Learn More</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Debt Solutions</h3>
+                <p>Explore formal debt solutions including IVAs, debt management plans, and more. One affordable monthly payment.</p>
+                <a href="#" class="btn get-advice-from-card">Get Free Advice</a>
+            </div>
+        </div>
+
+        <div class="info-section" id="fact-finder">
+            <h2>Free Fact Finder</h2>
+            <p>Complete our simple fact finder to discover the best debt solution for your situation. We'll help you understand your options and find a path forward.</p>
+            
+            <div class="form-container" id="adviceForm">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 16.66%"></div>
+                </div>
+                
+                <form id="factFinderForm" method="POST" action="https://api.web3forms.com/submit">
+                    <!-- Web3Forms Access Key - Replace with your actual key -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    
+                    <!-- Optional: Redirect after submission -->
+                    <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html">
+                    
+                    <!-- Honeypot to prevent spam -->
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    
+                    <!-- Step 1 -->
+                    <div class="form-step active">
+                        <h3>Step 1: Personal Information</h3>
+                        <div class="form-group">
+                            <label for="full_name">Full Name *</label>
+                            <input type="text" id="full_name" name="full_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-next">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="form-step">
+                        <h3>Step 2: Debt Information</h3>
+                        <div class="form-group">
+                            <label for="debt_type">Type of Debt *</label>
+                            <select id="debt_type" name="debt_type" required>
+                                <option value="">Select debt type</option>
+                                <option value="council_tax">Council Tax</option>
+                                <option value="credit_card">Credit Card</option>
+                                <option value="catalogues">Catalogues</option>
+                                <option value="personal_loan">Personal Loan</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="debt_amount">Total Debt Amount *</label>
+                            <select id="debt_amount" name="debt_amount" required>
+                                <option value="">Select amount</option>
+                                <option value="under_1000">Under £1,000</option>
+                                <option value="1000_5000">£1,000 - £5,000</option>
+                                <option value="5000_10000">£5,000 - £10,000</option>
+                                <option value="10000_20000">£10,000 - £20,000</option>
+                                <option value="over_20000">Over £20,000</option>
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-prev">Previous</button>
+                            <button type="button" class="btn btn-next">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="form-step">
+                        <h3>Step 3: Bailiff Situation</h3>
+                        <div class="form-group">
+                            <label for="bailiff_visited">Have bailiffs visited? *</label>
+                            <select id="bailiff_visited" name="bailiff_visited" required>
+                                <option value="">Select option</option>
+                                <option value="no">No, not yet</option>
+                                <option value="yes_once">Yes, once</option>
+                                <option value="yes_multiple">Yes, multiple times</option>
+                                <option value="notice">Only received notice</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="goods_taken">Have goods been taken? *</label>
+                            <select id="goods_taken" name="goods_taken" required>
+                                <option value="">Select option</option>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                                <option value="threatened">Threatened but not taken</option>
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-prev">Previous</button>
+                            <button type="button" class="btn btn-next">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="form-step">
+                        <h3>Step 4: Financial Situation</h3>
+                        <div class="form-group">
+                            <label for="employment">Employment Status *</label>
+                            <select id="employment" name="employment" required>
+                                <option value="">Select status</option>
+                                <option value="employed">Employed full-time</option>
+                                <option value="part_time">Employed part-time</option>
+                                <option value="self_employed">Self-employed</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="retired">Retired</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthly_income">Monthly Income *</label>
+                            <select id="monthly_income" name="monthly_income" required>
+                                <option value="">Select range</option>
+                                <option value="under_1000">Under £1,000</option>
+                                <option value="1000_1500">£1,000 - £1,500</option>
+                                <option value="1500_2000">£1,500 - £2,000</option>
+                                <option value="2000_2500">£2,000 - £2,500</option>
+                                <option value="over_2500">Over £2,500</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthly_expenses">Monthly Expenses *</label>
+                            <select id="monthly_expenses" name="monthly_expenses" required>
+                                <option value="">Select range</option>
+                                <option value="under_500">Under £500</option>
+                                <option value="500_1000">£500 - £1,000</option>
+                                <option value="1000_1500">£1,000 - £1,500</option>
+                                <option value="1500_2000">£1,500 - £2,000</option>
+                                <option value="over_2000">Over £2,000</option>
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-prev">Previous</button>
+                            <button type="button" class="btn btn-next">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="form-step">
+                        <h3>Step 5: Property & Assets</h3>
+                        <div class="form-group">
+                            <label for="home_status">Home Status *</label>
+                            <select id="home_status" name="home_status" required>
+                                <option value="">Select status</option>
+                                <option value="own">Own outright</option>
+                                <option value="mortgage">Mortgage</option>
+                                <option value="rent">Rent</option>
+                                <option value="living_with_family">Living with family</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Do you own a vehicle? *</label>
+                            <select id="vehicle" name="vehicle" required>
+                                <option value="">Select option</option>
+                                <option value="no">No</option>
+                                <option value="yes_essential">Yes - essential for work</option>
+                                <option value="yes_not_essential">Yes - not essential</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="savings">Do you have savings? *</label>
+                            <select id="savings" name="savings" required>
+                                <option value="">Select option</option>
+                                <option value="no">No savings</option>
+                                <option value="under_500">Under £500</option>
+                                <option value="500_1000">£500 - £1,000</option>
+                                <option value="over_1000">Over £1,000</option>
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-prev">Previous</button>
+                            <button type="button" class="btn btn-next">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="form-step">
+                        <h3>Step 6: Final Step</h3>
+                        <div class="form-group">
+                            <label for="preferred_contact">Preferred Contact Method *</label>
+                            <select id="preferred_contact" name="preferred_contact" required>
+                                <option value="">Select method</option>
+                                <option value="phone">Phone</option>
+                                <option value="email">Email</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="sms">SMS</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="best_time">Best Time to Contact</label>
+                            <input type="text" id="best_time" name="best_time" placeholder="e.g., Weekdays after 5pm">
+                        </div>
+                        <div class="form-group">
+                            <label for="additional_info">Additional Information</label>
+                            <textarea id="additional_info" name="additional_info" rows="4" placeholder="Tell us anything else you think we should know..."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to be contacted via phone, email, WhatsApp, and SMS. For further information on how we will treat your information please see our <a href="privacy.html">Privacy Policy</a>.</label>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-prev">Previous</button>
+                            <button type="submit" class="btn btn-primary">Submit & Get Free Advice</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Should I Let a Bailiff In?</h2>
+            <p>It's not always advisable to let a bailiff into your home when they pay you a visit. The notion that bailiffs and enforcement agents have unrestricted authority, and that you must obey their every command, has been fueled by hearsay and anxiety. However, with the proper bailiff advice, everyone can be better informed about the regulations that govern bailiff powers.</p>
+            <p><strong>Key Point:</strong> Bailiffs are not permitted to forcibly enter your property and require your permission to do so. But once you grant them access, they may begin seizing your belongings to compensate for the outstanding debt.</p>
+            <a href="help-with-bailiffs.html" class="btn">Learn More About Your Rights</a>
+        </div>
+
+        <div class="info-section">
+            <h2>Benefits of an IVA</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>✓ Benefits</h3>
+                    <ul>
+                        <li>One affordable monthly payment based on what you can realistically afford</li>
+                        <li>Interest and charges are frozen once the IVA is in place</li>
+                        <li>A fixed term, usually five or six years, after which any remaining debt is written off</li>
+                        <li>Legal protection from creditors, meaning they can't chase you for payment or take court action</li>
+                        <li>You can keep your home and car in most cases</li>
+                        <li>A formal, government-backed solution supervised by a licensed professional</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>⚠ Considerations</h3>
+                    <ul>
+                        <li>Your credit rating will be affected for six years</li>
+                        <li>You'll need to stick to a budget and declare any changes in income</li>
+                        <li>If your IVA fails, you risk bankruptcy</li>
+                        <li>Some assets may be reviewed – especially if you own a property with equity</li>
+                        <li>Not all debts are included – student loans, fines, and child maintenance remain payable</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic;">An IVA is our proposed solution for dealing with bailiffs. We also work with trusted partners that can help with other solutions. See the benefits, considerations and fees here.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="help-with-bailiffs.html">Help with Bailiffs</a></li>
+                    <li><a href="help-with-council-tax.html">Council Tax Help</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> 0800 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> help@stopthebailiff.co.uk</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 8pm</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span class="current-year">2024</span> Stop the Bailiff. All rights reserved.</p>
+            <p style="font-size: 0.875rem; margin-top: 1rem;">Seeking advice sooner could give you more options. May not be suitable in all circumstances, fees apply, your credit rating may be affected.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all advice buttons
+            const getAdviceBtn = document.getElementById('getAdviceBtn');
+            const heroAdviceBtn = document.getElementById('heroAdviceBtn');
+            const cardAdviceBtns = document.querySelectorAll('.get-advice-from-card');
+            const adviceForm = document.getElementById('adviceForm');
+            
+            // Function to scroll to form and highlight it
+            function scrollToForm(event) {
+                event.preventDefault();
+                
+                // Scroll to form
+                adviceForm.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                // Add highlight class
+                adviceForm.classList.add('highlight');
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    adviceForm.classList.remove('highlight');
+                }, 3000);
+                
+                // Focus on first input of first step
+                const firstInput = document.querySelector('.form-step.active input');
+                if (firstInput) {
+                    setTimeout(() => {
+                        firstInput.focus();
+                    }, 500);
+                }
+            }
+            
+            // Add click handlers to all advice buttons
+            if (getAdviceBtn) {
+                getAdviceBtn.addEventListener('click', scrollToForm);
+            }
+            
+            if (heroAdviceBtn) {
+                heroAdviceBtn.addEventListener('click', scrollToForm);
+            }
+            
+            cardAdviceBtns.forEach(btn => {
+                btn.addEventListener('click', scrollToForm);
+            });
+            
+            // Handle form submission with Web3Forms
+            const factFinderForm = document.getElementById('factFinderForm');
+            
+            if (factFinderForm) {
+                factFinderForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitButton = factFinderForm.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = 'Submitting...';
+                    submitButton.disabled = true;
+                    
+                    try {
+                        // Collect form data
+                        const formData = new FormData(factFinderForm);
+                        const data = Object.fromEntries(formData);
+                        
+                        // Add your Web3Forms access key (you'll need to set this)
+                        // Make sure to replace with your actual key
+                        data.access_key = 'YOUR_ACCESS_KEY_HERE'; // Replace with your actual Web3Forms access key
+                        
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.success) {
+                            // Show success message
+                            showAlert('Thank you for your submission! One of our advisors will contact you shortly.', 'success');
+                            
+                            // Reset form and go back to step 1
+                            factFinderForm.reset();
+                            
+                            // Reset to step 1
+                            const steps = factFinderForm.querySelectorAll('.form-step');
+                            steps.forEach((step, index) => {
+                                if (index === 0) {
+                                    step.classList.add('active');
+                                } else {
+                                    step.classList.remove('active');
+                                }
+                            });
+                            
+                            // Reset progress bar
+                            const progressBar = document.querySelector('.progress');
+                            if (progressBar) {
+                                progressBar.style.width = '16.66%';
+                            }
+                        } else {
+                            showAlert('There was an error submitting the form. Please try again or contact us directly.', 'error');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        showAlert('There was an error submitting the form. Please check your internet connection and try again.', 'error');
+                    } finally {
+                        // Reset button state
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }
+                });
+            }
+            
+            // Alert function
+            function showAlert(message, type) {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type}`;
+                alertDiv.textContent = message;
+                alertDiv.style.position = 'fixed';
+                alertDiv.style.top = '20px';
+                alertDiv.style.right = '20px';
+                alertDiv.style.zIndex = '9999';
+                alertDiv.style.padding = '1rem 2rem';
+                alertDiv.style.borderRadius = '5px';
+                alertDiv.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+                alertDiv.style.color = type === 'success' ? '#155724' : '#721c24';
+                alertDiv.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+                alertDiv.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                alertDiv.style.fontWeight = 'bold';
+                
+                document.body.appendChild(alertDiv);
+                
+                setTimeout(() => {
+                    alertDiv.remove();
+                }, 5000);
+            }
+            
+            // Handle multi-step navigation
+            const nextButtons = factFinderForm.querySelectorAll('.btn-next');
+            const prevButtons = factFinderForm.querySelectorAll('.btn-prev');
+            const steps = factFinderForm.querySelectorAll('.form-step');
+            const progressBar = document.querySelector('.progress');
+            
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Find current step
+                    let currentStepIndex = 0;
+                    steps.forEach((step, index) => {
+                        if (step.classList.contains('active')) {
+                            currentStepIndex = index;
+                        }
+                    });
+                    
+                    // Validate current step
+                    const currentStep = steps[currentStepIndex];
+                    const inputs = currentStep.querySelectorAll('input[required], select[required]');
+                    let isValid = true;
+                    
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.style.borderColor = '#dc3545';
+                            
+                            // Add error message
+                            let errorMsg = input.parentNode.querySelector('.error-message');
+                            if (!errorMsg) {
+                                errorMsg = document.createElement('small');
+                                errorMsg.className = 'error-message';
+                                errorMsg.style.color = '#dc3545';
+                                errorMsg.style.fontSize = '0.875rem';
+                                errorMsg.style.marginTop = '0.25rem';
+                                errorMsg.style.display = 'block';
+                                errorMsg.textContent = 'This field is required';
+                                input.parentNode.appendChild(errorMsg);
+                            }
+                        } else {
+                            input.style.borderColor = '';
+                            const errorMsg = input.parentNode.querySelector('.error-message');
+                            if (errorMsg) {
+                                errorMsg.remove();
+                            }
+                        }
+                    });
+                    
+                    if (isValid && currentStepIndex < steps.length - 1) {
+                        // Move to next step
+                        steps[currentStepIndex].classList.remove('active');
+                        steps[currentStepIndex + 1].classList.add('active');
+                        
+                        // Update progress bar
+                        if (progressBar) {
+                            const progress = ((currentStepIndex + 2) / steps.length) * 100;
+                            progressBar.style.width = `${progress}%`;
+                        }
+                    }
+                });
+            });
+            
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Find current step
+                    let currentStepIndex = 0;
+                    steps.forEach((step, index) => {
+                        if (step.classList.contains('active')) {
+                            currentStepIndex = index;
+                        }
+                    });
+                    
+                    if (currentStepIndex > 0) {
+                        // Move to previous step
+                        steps[currentStepIndex].classList.remove('active');
+                        steps[currentStepIndex - 1].classList.add('active');
+                        
+                        // Update progress bar
+                        if (progressBar) {
+                            const progress = ((currentStepIndex) / steps.length) * 100;
+                            progressBar.style.width = `${progress}%`;
+                        }
+                    }
+                });
+            });
+            
+            // Remove error styling on input
+            factFinderForm.querySelectorAll('input, select').forEach(field => {
+                field.addEventListener('input', function() {
+                    this.style.borderColor = '';
+                    const errorMsg = this.parentNode.querySelector('.error-message');
+                    if (errorMsg) {
+                        errorMsg.remove();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
