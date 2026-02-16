@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stop the Bailiff</title>
+    <meta name="description" content="Contact Stop the Bailiff for free expert advice on dealing with bailiffs and council tax debt.">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-gavel"></i>
+                <h1>Stop the <span>Bailiff</span></h1>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="help-with-bailiffs.html">Help with Bailiffs</a></li>
+                    <li><a href="help-with-council-tax.html">Council Tax Help</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team for free expert advice on dealing with bailiffs and debt.</p>
+        </section>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+            <div class="info-section" style="margin: 0;">
+                <h2>Get in Touch</h2>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3><i class="fas fa-phone" style="color: var(--secondary-color); margin-right: 10px;"></i> Phone</h3>
+                    <p><strong>0800 123 4567</strong> (Freephone)</p>
+                    <p>Monday to Friday: 9am - 8pm</p>
+                    <p>Saturday: 10am - 4pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3><i class="fas fa-envelope" style="color: var(--secondary-color); margin-right: 10px;"></i> Email</h3>
+                    <p><strong>help@stopthebailiff.co.uk</strong></p>
+                    <p>We aim to respond within 24 hours</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3><i class="fas fa-comment" style="color: var(--secondary-color); margin-right: 10px;"></i> Live Chat</h3>
+                    <p>Available on our website during opening hours</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3><i class="fas fa-map-marker-alt" style="color: var(--secondary-color); margin-right: 10px;"></i> Office Address</h3>
+                    <p>Stop the Bailiff<br>
+                    Debt Advice Centre<br>
+                    123 High Street<br>
+                    London<br>
+                    EC1A 1BB</p>
+                    <p><em>Visits by appointment only</em></p>
+                </div>
+                
+                <div class="social-links" style="justify-content: flex-start;">
+                    <a href="#" style="color: var(--secondary-color);"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" style="color: var(--secondary-color);"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" style="color: var(--secondary-color);"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" style="color: var(--secondary-color);"><i class="fab fa-whatsapp fa-2x"></i></a>
+                </div>
+            </div>
+            
+            <div class="form-container" style="margin: 0;">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="bailiff_help">Help with Bailiffs</option>
+                            <option value="council_tax">Council Tax Help</option>
+                            <option value="debt_advice">General Debt Advice</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your situation..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I agree to be contacted regarding my enquiry. For further information on how we will treat your information please see our <a href="privacy.html">Privacy Policy</a>.</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>How quickly can you help?</h3>
+                <p>We aim to respond to all enquiries within 24 hours. If your situation is urgent, please call our freephone number for immediate assistance.</p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>Is your advice really free?</h3>
+                <p>Yes, our initial advice is completely free. We'll explain all your options and if we recommend a paid solution like an IVA, we'll clearly explain all fees and implications before you proceed.</p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>Can you help if I'm not in England?</h3>
+                <p>Our advice is primarily for England and Wales, as bailiff laws differ in Scotland and Northern Ireland. Please contact us and we'll do our best to point you in the right direction.</p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>What information should I have ready?</h3>
+                <p>When you contact us, it's helpful to have details of your debts, any letters from bailiffs or the court, and information about your income and expenses.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="help-with-bailiffs.html">Help with Bailiffs</a></li>
+                    <li><a href="help-with-council-tax.html">Council Tax Help</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> 0800 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> help@stopthebailiff.co.uk</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 8pm</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span class="current-year">2024</span> Stop the Bailiff. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
