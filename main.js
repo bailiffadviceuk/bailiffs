@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = Object.fromEntries(formData);
             
             // Add your Web3Forms access key
-            data.access_key = '4683c45f-d8a6-4c54-9b0c-353acc2853a7'; // Replace with your actual Web3Forms access key
+            data.access_key = '258ea875-36ce-49b4-b9cc-bc47fc964fd6'; // Replace with your actual Web3Forms access key
             
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
